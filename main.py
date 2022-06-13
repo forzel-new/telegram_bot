@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 
-import telebot
+# Код со времён мамонтов, не удивляйтесь если найдете говнокод
+# Так-то, это мой первый бот в телеграме написаный на питоне
+
 import telebot
 from telebot import types
 
@@ -14,14 +16,11 @@ def support(message):
 	ds_server = types.InlineKeyboardButton(text="Дискорд-сервер", url="https://discord.gg/usZfpTtQk8")
 	yt = types.InlineKeyboardButton(text="Ютуб-канал", url="https://www.youtube.com/channel/UCppLVrmDsi4cQTTilUFvgqg")
 	oth = types.InlineKeyboardButton(text="Доп. телеграм-канал", url="https://t.me/crashbotsdiscord")
-
 	inline_about.row(telegram_link)
 	inline_about.row(telegram_chat)
 	inline_about.row(ds_server)
 	inline_about.row(yt)
 	inline_about.row(oth)
-
-
 	bot.send_message(message.from_user.id, "Поддержка", reply_markup = inline_about)
 
 @bot.message_handler(commands = ['bots'])
@@ -32,13 +31,11 @@ def bots(message):
 	anonymous = types.InlineKeyboardButton(text="Anonymous BOT", url="https://discord.com/api/oauth2/authorize?client_id=896653080748261446&permissions=8&scope=bot")
 	vc = types.InlineKeyboardButton(text="Voice BOT", url="https://discord.com/api/oauth2/authorize?client_id=896657069506183218&permissions=8&scope=bot")
 	chaos = types.InlineKeyboardButton(text="Chaos BOT", url="https://discord.com/api/oauth2/authorize?client_id=896657926155038740&permissions=8&scope=bot")
-
 	inline_about.row(antilavan)
 	inline_about.row(mee6)
-	inline_about.row(anonymous)
+	inline_about.row(anonymous) # Да-да, до for _ in ... я не догадался
 	inline_about.row(vc)
 	inline_about.row(chaos)
-
 	bot.send_message(message.from_user.id, "Краш-боты\nВыбери нужного тебе бота:", reply_markup = inline_about)
 
 
